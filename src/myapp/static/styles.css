@@ -86,3 +86,32 @@ summary { color: var(--muted); cursor: pointer; font-size: 12px; font-weight: 70
   .application-header { flex-direction: column; }
   .details { gap: 14px 20px; }
 }
+.case-steps { display: flex; justify-content: space-between; gap: 8px; margin: 22px 0; padding: 0; list-style: none; }
+.case-steps li { display: flex; flex: 1; align-items: center; gap: 7px; color: #8a9aa5; font-size: 11px; }
+.case-steps li span { display: grid; width: 25px; height: 25px; flex: 0 0 25px; place-items: center; border: 1px solid #d5dfe3; border-radius: 50%; font-weight: 700; }
+.case-steps .step-complete { color: var(--teal-dark); }
+.case-steps .step-complete span { border-color: var(--teal); background: var(--teal); color: #fff; }
+.case-steps .step-current { color: var(--ink); font-weight: 700; }
+.case-steps .step-current span { border: 2px solid var(--teal); color: var(--teal); }
+.case-steps .step-rejected { color: var(--coral); font-weight: 700; }
+.case-steps .step-rejected span { border-color: var(--coral); background: var(--coral); color: #fff; }
+.case-documents, .case-editor, .case-history { margin: 15px 0; }
+.case-documents h3, .case-history h3 { margin: 12px 0 6px; font-size: 13px; }
+.case-documents ul { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 8px 0; padding-left: 18px; color: var(--muted); font-size: 12px; }
+.case-documents li span { display: block; color: var(--muted); font-size: 10px; }
+.case-documents a { color: var(--teal-dark); overflow-wrap: anywhere; }
+.decision-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+.decision-form { margin-top: 15px; padding: 16px; border-radius: 8px; background: #f5f8f8; }
+.case-editor form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; padding-top: 14px; }
+.case-editor form label:nth-last-of-type(-n+2), .case-editor form button, .case-editor form .message { grid-column: 1 / -1; }
+.case-history { border-top: 1px solid var(--line); padding-top: 13px; }
+.case-history[open] { padding-bottom: 4px; }
+.case-history .event-list { max-height: 260px; overflow: auto; }
+main label small { color: var(--muted); font-weight: 400; line-height: 1.4; }
+
+@media (max-width: 600px) {
+  .case-steps { align-items: flex-start; flex-direction: column; }
+  .case-steps li { flex: initial; }
+  .case-editor form { grid-template-columns: 1fr; }
+  .case-editor form label, .case-editor form button, .case-editor form .message { grid-column: 1; }
+}

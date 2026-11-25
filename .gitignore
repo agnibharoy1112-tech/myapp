@@ -6,3 +6,4 @@ build/
 *.egg-info/
 .env
 loan_workflow.sqlite3
+loan_documents/

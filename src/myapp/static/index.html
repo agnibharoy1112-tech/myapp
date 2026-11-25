@@ -25,12 +25,42 @@
             <label>Your name<input name="applicant_name" required minlength="2" maxlength="120" autocomplete="name"></label>
             <label>Email address<input name="email" type="email" required maxlength="254" autocomplete="email"></label>
             <label>Loan amount (USD)<input name="amount" type="number" min="1" max="10000000" step="0.01" required></label>
+            <label>Loan type
+              <input name="loan_type" list="loan-types" required autocomplete="off" placeholder="Start typing a loan type">
+              <datalist id="loan-types">
+                <option value="Personal Loan">
+                <option value="Auto Loan">
+                <option value="Mortgage / Home Loan">
+                <option value="Home Equity Loan / HELOC">
+                <option value="Student Loan">
+                <option value="Business Loan">
+                <option value="SBA Loan">
+                <option value="Debt Consolidation Loan">
+                <option value="Credit Builder Loan">
+                <option value="Medical Loan">
+                <option value="RV / Boat Loan">
+              </datalist>
+            </label>
             <label>What is the loan for?<textarea name="purpose" required minlength="10" maxlength="2000" rows="4"></textarea></label>
+            <label>Supporting documents (optional, multiple files)
+              <input name="documents" type="file" multiple>
+              <small>Any file type; maximum 10 MB per document. Add more documents later with your tracking code.</small>
+            </label>
             <button class="button button-primary" type="submit">Submit application</button>
             <p id="application-message" class="message" aria-live="polite"></p>
           </form>
 
           <div class="side-column">
+            <form id="document-upload-form" class="panel">
+              <h2>Upload more documents</h2>
+              <p>Use the private tracking code from your application confirmation.</p>
+              <label>Tracking code<input name="tracking_code" required autocomplete="off"></label>
+              <label>Documents<input name="files" type="file" multiple required></label>
+              <small>Any file type; maximum 10 MB per document.</small>
+              <button class="button button-secondary" type="submit">Upload documents</button>
+              <p id="document-message" class="message" aria-live="polite"></p>
+            </form>
+
             <form id="tracking-form" class="panel">
               <h2>Check your application</h2>
               <p>Enter the private tracking code shown after you apply.</p>
@@ -62,7 +92,7 @@
           <h2>Create a staff account</h2>
           <form id="staff-form" class="staff-form">
             <label>Username<input name="username" required minlength="3" maxlength="80"></label>
-            <label>Temporary password<input name="password" type="password" required minlength="12" maxlength="128"></label>
+            <label>Password (at least 8 characters)<input name="password" type="password" required minlength="8" maxlength="128"></label>
             <label>Role
               <select name="role" required>
                 <option value="coordinator">Loan Coordinator</option>

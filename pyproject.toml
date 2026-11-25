@@ -9,7 +9,7 @@ description = "Anonymous loan applications with a role-based approval workflow"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
-dependencies = ["fastapi", "uvicorn"]
+dependencies = ["fastapi", "uvicorn", "python-multipart"]
 
 [project.scripts]
 myapp = "myapp.main:run"
