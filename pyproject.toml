@@ -16,3 +16,6 @@ myapp = "myapp.main:run"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/myapp"]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
