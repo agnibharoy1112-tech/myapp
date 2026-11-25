@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "myapp-yourname"
+version = "0.1.0"
+description = "My first open source web app"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+dependencies = ["fastapi", "uvicorn"]
+
+[project.scripts]
+myapp = "myapp.main:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/myapp"]
